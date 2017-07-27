@@ -1,0 +1,33 @@
+<h2>Show blogs</h2>
+
+<ul>
+
+  <li>
+    <strong>Title:</strong>
+    <%= @blogs.title %>
+  </li>
+
+  <li>
+    <strong>Subtitle:</strong>
+    <%= @blogs.subtitle %>
+  </li>
+
+  <li>
+    <strong>Image:</strong>
+    <%= @blogs.image %>
+  </li>
+
+  <li>
+    <strong>Link:</strong>
+    <%= @blogs.link %>
+  </li>
+
+  <li>
+    <strong>Author:</strong>
+    <%= @blogs.author %>
+  </li>
+
+</ul>
+
+<%= link "Edit", to: blogs_path(@conn, :edit, @blogs) %>
+<%= link "Back", to: blogs_path(@conn, :index) %>

@@ -1,0 +1,34 @@
+<h2>Listing blogs</h2>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th>Title</th>
+      <th>Subtitle</th>
+      <th>Image</th>
+      <th>Link</th>
+      <th>Author</th>
+
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+<%= for blogs <- @blogs do %>
+    <tr>
+      <td><%= blogs.title %></td>
+      <td><%= blogs.subtitle %></td>
+      <td><%= blogs.image %></td>
+      <td><%= blogs.link %></td>
+      <td><%= blogs.author %></td>
+
+      <td class="text-right">
+        <%= link "Show", to: blogs_path(@conn, :show, blogs), class: "btn btn-default btn-xs" %>
+        <%= link "Edit", to: blogs_path(@conn, :edit, blogs), class: "btn btn-default btn-xs" %>
+        <%= link "Delete", to: blogs_path(@conn, :delete, blogs), method: :delete, data: [confirm: "Are you sure?"], class: "btn btn-danger btn-xs" %>
+      </td>
+    </tr>
+<% end %>
+  </tbody>
+</table>
+
+<%= link "New blogs", to: blogs_path(@conn, :new) %>

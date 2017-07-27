@@ -1,0 +1,6 @@
+<h2>Edit blogs</h2>
+
+<%= render "form.html", changeset: @changeset,
+                        action: blogs_path(@conn, :update, @blogs) %>
+
+<%= link "Back", to: blogs_path(@conn, :index) %>
